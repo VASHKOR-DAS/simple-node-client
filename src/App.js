@@ -27,7 +27,11 @@ function App() {
       body: JSON.stringify(user), // ai user object jeta create korlam seta pathabo, amra data ta body er moddhe pathaici tai server a body te pawar try korbo
     })
       .then(res => res.json())
-      .then(data => console.log(data)) // backend theke user k console a pathiye dise
+      .then(data => {
+        console.log(data); // backend theke user k console a pathiye dise
+        const newUsers = [...users, data]; // ager users gulo add korlam + backend theke id object soho data ta
+        setUsers(newUsers);
+      }) 
       .catch(error => console.error(error))
 
 
