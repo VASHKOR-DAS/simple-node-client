@@ -31,7 +31,7 @@ function App() {
         console.log(data); // backend theke user k console a pathiye dise
         const newUsers = [...users, data]; // ager users gulo add korlam + backend theke id object soho data ta
         setUsers(newUsers);
-      }) 
+      })
       .catch(error => console.error(error))
 
 
@@ -57,7 +57,8 @@ function App() {
 
       <div>
         {users.map(user =>
-          <p key={user.id}>
+          // db te _id tai aikhane key hisebe aita dilm
+          <p key={user._id}>
             {user.name} {user.email}
           </p>
         )}
